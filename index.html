@@ -1,0 +1,13 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TATS · Estoque</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+<div id="login" class="login"><div class="logo big">TATS</div><p>Controle de estoque</p><input id="em" type="email" placeholder="e-mail"><input id="pw" type="password" placeholder="senha"><button id="go">Entrar</button><small id="err"></small></div>
+<div id="app" hidden>
+<header><div class="logo">TATS</div><nav><button data-tab="estoque" class="on">Estoque</button><button data-tab="compras">Compras</button><button data-tab="config">Configurações</button></nav><button id="out" class="ghost">Sair</button></header>
+<main><div id="alert"></div><div class="chips" id="chips"></div>
+<section id="estoque"><div class="tools"><input id="q" placeholder="Buscar item..."><select id="sort"><option value="ordem">Minha ordem</option><option value="pct">Mais perto de acabar</option></select></div><div id="grid" class="grid"></div></section>
+<section id="compras" hidden><div class="panel"><h3>Registrar compra</h3><div class="form">
+<label>Item<select id="cItem"></select></label><label>Data da compra<input id="cData" type="date"></label><label>Quantidade<input id="cQtd" type="number" step="any" min="0"></label><label>Total pago (R$)<input id="cTot" type="number" step="any" min="0"></label><label>Valor por unidade<input id="cUnit" readonly></label><label>Previsão de entrega<input id="cPrev" type="date"></label><label>Fornecedor / obs.<input id="cForn"></label><button id="cAdd">Registrar</button></div></div>
+<div id="clist" class="scroll"></div></section>
+<section id="config" hidden><div class="panel"><h3>Novo item</h3><div class="form"><label>Nome<input id="nNome"></label><label>Tipo<select id="nCat"></select></label><label>Unidade<input id="nUn" placeholder="kg, un, g..."></label><label>Estoque ideal (100%)<input id="nMeta" type="number" step="any"></label><label>Estoque mínimo<input id="nMin" type="number" step="any"></label><button id="nAdd">Adicionar</button></div><div id="seedBox"></div></div>
+<p class="hint">Dica: "Estoque ideal" é a quantidade que você tem logo após abastecer (vira 100% no gráfico). Ao chegar no "mínimo", o item é sinalizado. Use ▲▼ para ordenar.</p><div id="cfg"></div></section>
+</main></div><script type="module" src="app.js"></script></body></html>

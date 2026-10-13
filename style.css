@@ -1,0 +1,36 @@
+:root{--g:#324a23;--gd:#25381a;--o:#b08f32;--bg:#f7f5ef;--ink:#2b2b25;--ln:#e4e0d3;--red:#b3402f;--ok:#5f8a3c}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font-family:'Josefin Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:16px}
+.logo{font-weight:200;letter-spacing:.18em;color:var(--o);font-size:28px}.logo.big{font-size:64px}
+.login{min-height:100vh;background:var(--g);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff;padding:20px}
+.login p{margin:0 0 10px;letter-spacing:.1em;text-transform:uppercase;font-size:13px}.login input{width:280px;max-width:100%}#err{color:#ffb4a8}
+input,select,button{font:inherit;padding:9px 12px;border:1px solid var(--ln);border-radius:8px;background:#fff;color:var(--ink)}
+button{cursor:pointer;background:var(--g);color:#fff;border:0}button:hover{background:var(--gd)}button.ghost{background:none;color:#fff;border:1px solid #ffffff55}
+header{background:var(--g);display:flex;align-items:center;gap:16px;padding:10px 20px;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+nav{display:flex;gap:4px;flex:1}nav button{background:none;color:#ffffffbb;border-radius:20px}nav button.on{background:var(--o);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:18px}
+.warn{background:#fbeae6;border:1px solid #e8b9af;color:var(--red);padding:12px 16px;border-radius:10px;margin-bottom:14px}
+.chips{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}.chips button{background:#fff;color:var(--g);border:1px solid var(--ln);border-radius:20px}.chips button.on{background:var(--g);color:#fff}
+.tools{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}.tools input{flex:1;min-width:180px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:#fff;border:1px solid var(--ln);border-radius:12px;padding:14px 16px;border-left:5px solid var(--ok)}
+.card.mid{border-left-color:var(--o)}.card.low{border-left-color:var(--red);background:#fffafa}.card.none{border-left-color:var(--ln)}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:start}.top b{font-weight:600}
+.tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--o)}
+.bar{position:relative;height:10px;background:#ece8da;border-radius:6px;margin:12px 0 6px}.bar i{position:absolute;left:0;top:0;bottom:0;border-radius:6px;background:var(--ok)}
+.mid .bar i{background:var(--o)}.low .bar i{background:var(--red)}.bar u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink)}
+.meta{display:flex;justify-content:space-between;font-size:13px;color:#6b6a5e}
+.edit{display:flex;align-items:center;gap:8px;margin-top:10px}.edit input{width:110px}
+.pend{font-size:12px;color:var(--o);margin-top:8px}
+.panel{background:#fff;border:1px solid var(--ln);border-radius:12px;padding:14px 16px;margin-bottom:14px}.panel h3{margin:0 0 10px;font-weight:600}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;align-items:end}
+label{display:flex;flex-direction:column;font-size:12px;color:#6b6a5e;gap:3px}label input,label select{color:var(--ink);font-size:15px;width:100%}
+.hint{font-size:13px;color:#6b6a5e}
+.row{background:#fff;border:1px solid var(--ln);border-radius:10px;padding:10px 12px;margin-bottom:8px;display:grid;grid-template-columns:2fr repeat(6,1fr) auto;gap:8px;align-items:end}
+.row .rn{display:flex;flex-direction:column;gap:4px}.acts{display:flex;gap:4px}.acts button{padding:8px 10px}
+.acts .del{background:var(--red)}
+.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;font-size:14px}
+th,td{padding:9px 10px;border-bottom:1px solid var(--ln);text-align:left;white-space:nowrap}th{font-weight:600;color:var(--g);font-size:12px;text-transform:uppercase}
+.st{padding:2px 10px;border-radius:12px;font-size:12px;background:#f3e9c9;color:#7a6120}.st.ok{background:#dfeccf;color:#3f6a21}
+.good{color:var(--ok)}.bad{color:var(--red)}
+@media(max-width:900px){.row{grid-template-columns:1fr 1fr}.row .rn{grid-column:1/-1}}
