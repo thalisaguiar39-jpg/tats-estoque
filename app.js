@@ -14,7 +14,8 @@ let items=[],compras=[],cat='Todos',unsubs=[];
 $('#nCat').innerHTML=CATS.map(c=>`<option>${c}</option>`).join('');
 $('#cData').valueAsDate=new Date();
 const login=()=>signInWithEmailAndPassword(auth,$('#em').value,$('#pw').value).catch(()=>$('#err').textContent='E-mail ou senha incorretos.');
-$('#go').onclick=login;$('#pw').onkeydown=e=>e.key==='Enter'&&login();
+$('#go').onclick=login;
+$('#pw').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
 $('#out').onclick=()=>signOut(auth);
 onAuthStateChanged(auth,u=>{
   $('#login').hidden=!!u;$('#app').hidden=!u;unsubs.forEach(f=>f());unsubs=[];
